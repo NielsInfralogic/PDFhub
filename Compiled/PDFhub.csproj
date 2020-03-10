@@ -1,0 +1,578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{63E0D7EA-9EB4-4159-BC87-5C206CA85C7E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PDFhub</RootNamespace>
+    <AssemblyName>PDFhub</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Telerik.Web.Design, Version=2020.1.219.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for ASP.NET AJAX R1 2020\Bin45\Telerik.Web.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Web.Device.Detection, Version=2020.1.219.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for ASP.NET AJAX R1 2020\Bin45\Telerik.Web.Device.Detection.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Web.Spreadsheet, Version=2020.1.219.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for ASP.NET AJAX R1 2020\AdditionalLibraries\Bin45\Telerik.Web.Spreadsheet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Web.UI, Version=2020.1.219.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for ASP.NET AJAX R1 2020\Bin45\Telerik.Web.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins, Version=2020.1.219.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for ASP.NET AJAX R1 2020\Bin45\Telerik.Web.UI.Skins.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2020.1.212.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for ASP.NET AJAX R1 2020\AdditionalLibraries\Bin45\Telerik.Windows.Documents.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Fixed, Version=2020.1.212.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for ASP.NET AJAX R1 2020\AdditionalLibraries\Bin45\Telerik.Windows.Documents.Fixed.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow, Version=2020.1.212.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for ASP.NET AJAX R1 2020\AdditionalLibraries\Bin45\Telerik.Windows.Documents.Flow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet, Version=2020.1.212.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for ASP.NET AJAX R1 2020\AdditionalLibraries\Bin45\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2020.1.212.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for ASP.NET AJAX R1 2020\AdditionalLibraries\Bin45\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf, Version=2020.1.212.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for ASP.NET AJAX R1 2020\AdditionalLibraries\Bin45\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip, Version=2020.1.212.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Progress\Telerik UI for ASP.NET AJAX R1 2020\AdditionalLibraries\Bin45\Telerik.Windows.Zip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="ChangeChannels.aspx" />
+    <Content Include="CheckPages.aspx" />
+    <Content Include="ConfigExportDetails.ascx" />
+    <Content Include="ConfigExport.aspx" />
+    <Content Include="ConfigImport.aspx" />
+    <Content Include="ConfigImportDetails.ascx" />
+    <Content Include="ConfigInput.aspx" />
+    <Content Include="ConfigInputDetails.ascx" />
+    <Content Include="ConfigMaint.aspx" />
+    <Content Include="ConfigPackages.aspx" />
+    <Content Include="ConfigProcessing.aspx" />
+    <Content Include="ConfigPublication.aspx" />
+    <Content Include="ConfigPublicationDetails.ascx" />
+    <Content Include="ConfigUsers.aspx" />
+    <Content Include="EditAddExport.aspx" />
+    <Content Include="EditAddImport.aspx" />
+    <Content Include="EditAddInput.aspx" />
+    <Content Include="EditAddUser.aspx" />
+    <Content Include="ExportDocumentation.aspx" />
+    <Content Include="ExportLog.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="images\AddRecord.gif" />
+    <Content Include="images\Alert.png" />
+    <Content Include="images\Application.png" />
+    <Content Include="images\cached.png" />
+    <Content Include="images\cancel.png" />
+    <Content Include="images\Cloud-48.png" />
+    <Content Include="images\Danger.png" />
+    <Content Include="images\Delete.gif" />
+    <Content Include="images\Document-48.png" />
+    <Content Include="images\document.png" />
+    <Content Include="images\Down.png" />
+    <Content Include="images\Edit.gif" />
+    <Content Include="images\ExportToExcel.gif" />
+    <Content Include="images\Folder-add-50.png" />
+    <Content Include="images\InfraLogic.gif" />
+    <Content Include="images\InfraLogicTiny.gif" />
+    <Content Include="images\inspect.png" />
+    <Content Include="images\loop.png" />
+    <Content Include="images\MoveDown.gif" />
+    <Content Include="images\MoveUp.gif" />
+    <Content Include="images\OK.png" />
+    <Content Include="images\Package-48.png" />
+    <Content Include="images\Pdf-48.png" />
+    <Content Include="images\Planning-50.png" />
+    <Content Include="images\Problem.png" />
+    <Content Include="images\Process-50.png" />
+    <Content Include="images\Refresh.gif" />
+    <Content Include="images\Running.png" />
+    <Content Include="images\Stop.png" />
+    <Content Include="images\syncproblem.png" />
+    <Content Include="images\Turn off.png" />
+    <Content Include="images\Up.png" />
+    <Content Include="images\Update.gif" />
+    <Content Include="images\User-50.png" />
+    <Content Include="images\Warning.png" />
+    <Content Include="ImportLog.aspx" />
+    <Content Include="MaintLog.aspx" />
+    <Content Include="ProductionLog.aspx" />
+    <Content Include="InputLog.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="MasterPageSingleMenu.Master" />
+    <Content Include="EditAddPublication.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="images\logo.png" />
+    <Content Include="ProcessLog.aspx" />
+    <Content Include="PublicationDocumentation.aspx" />
+    <Content Include="Release.aspx" />
+    <Content Include="Reports.aspx" />
+    <Content Include="ResendToChannel.aspx" />
+    <Content Include="scripts\scripts.js" />
+    <Content Include="Search.aspx" />
+    <Content Include="Statistics.aspx" />
+    <Content Include="ConfigHome.aspx" />
+    <Content Include="styles\default.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeChannels.aspx.cs">
+      <DependentUpon>ChangeChannels.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangeChannels.aspx.designer.cs">
+      <DependentUpon>ChangeChannels.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckPages.aspx.cs">
+      <DependentUpon>CheckPages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckPages.aspx.designer.cs">
+      <DependentUpon>CheckPages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigExportDetails.ascx.cs">
+      <DependentUpon>ConfigExportDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigExportDetails.ascx.designer.cs">
+      <DependentUpon>ConfigExportDetails.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigExport.aspx.cs">
+      <DependentUpon>ConfigExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigExport.aspx.designer.cs">
+      <DependentUpon>ConfigExport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigImport.aspx.cs">
+      <DependentUpon>ConfigImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigImport.aspx.designer.cs">
+      <DependentUpon>ConfigImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigImportDetails.ascx.cs">
+      <DependentUpon>ConfigImportDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigImportDetails.ascx.designer.cs">
+      <DependentUpon>ConfigImportDetails.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigInput.aspx.cs">
+      <DependentUpon>ConfigInput.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigInput.aspx.designer.cs">
+      <DependentUpon>ConfigInput.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigInputDetails.ascx.cs">
+      <DependentUpon>ConfigInputDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigInputDetails.ascx.designer.cs">
+      <DependentUpon>ConfigInputDetails.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigMaint.aspx.cs">
+      <DependentUpon>ConfigMaint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigMaint.aspx.designer.cs">
+      <DependentUpon>ConfigMaint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigPackages.aspx.cs">
+      <DependentUpon>ConfigPackages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigPackages.aspx.designer.cs">
+      <DependentUpon>ConfigPackages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigProcessing.aspx.cs">
+      <DependentUpon>ConfigProcessing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigProcessing.aspx.designer.cs">
+      <DependentUpon>ConfigProcessing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigPublication.aspx.cs">
+      <DependentUpon>ConfigPublication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigPublication.aspx.designer.cs">
+      <DependentUpon>ConfigPublication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigPublicationDetails.ascx.cs">
+      <DependentUpon>ConfigPublicationDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigPublicationDetails.ascx.designer.cs">
+      <DependentUpon>ConfigPublicationDetails.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigUsers.aspx.cs">
+      <DependentUpon>ConfigUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigUsers.aspx.designer.cs">
+      <DependentUpon>ConfigUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataProviders\DBaccess.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditAddExport.aspx.cs">
+      <DependentUpon>EditAddExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditAddExport.aspx.designer.cs">
+      <DependentUpon>EditAddExport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditAddImport.aspx.cs">
+      <DependentUpon>EditAddImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditAddImport.aspx.designer.cs">
+      <DependentUpon>EditAddImport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditAddInput.aspx.cs">
+      <DependentUpon>EditAddInput.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditAddInput.aspx.designer.cs">
+      <DependentUpon>EditAddInput.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditAddUser.aspx.cs">
+      <DependentUpon>EditAddUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditAddUser.aspx.designer.cs">
+      <DependentUpon>EditAddUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExportDocumentation.aspx.cs">
+      <DependentUpon>ExportDocumentation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExportDocumentation.aspx.designer.cs">
+      <DependentUpon>ExportDocumentation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExportLog.aspx.cs">
+      <DependentUpon>ExportLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExportLog.aspx.designer.cs">
+      <DependentUpon>ExportLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ImportLog.aspx.cs">
+      <DependentUpon>ImportLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImportLog.aspx.designer.cs">
+      <DependentUpon>ImportLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MaintLog.aspx.cs">
+      <DependentUpon>MaintLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MaintLog.aspx.designer.cs">
+      <DependentUpon>MaintLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NameId.cs" />
+    <Compile Include="Models\Page.cs" />
+    <Compile Include="Models\PPITranslations.cs" />
+    <Compile Include="Models\Production.cs" />
+    <Compile Include="Models\PublicationShort.cs" />
+    <Compile Include="Models\ReportPageHistoryItem.cs" />
+    <Compile Include="ProductionLog.aspx.cs">
+      <DependentUpon>ProductionLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductionLog.aspx.designer.cs">
+      <DependentUpon>ProductionLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InputLog.aspx.cs">
+      <DependentUpon>InputLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InputLog.aspx.designer.cs">
+      <DependentUpon>InputLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPageSingleMenu.Master.cs">
+      <DependentUpon>MasterPageSingleMenu.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPageSingleMenu.Master.designer.cs">
+      <DependentUpon>MasterPageSingleMenu.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Channel.cs" />
+    <Compile Include="Models\ChannelGroup.cs" />
+    <Compile Include="Models\Constants.cs" />
+    <Compile Include="Models\ImportConfiguration.cs" />
+    <Compile Include="Models\LogItem.cs" />
+    <Compile Include="Models\InputConfiguration.cs" />
+    <Compile Include="Models\Package.cs" />
+    <Compile Include="Models\PDFProcess.cs" />
+    <Compile Include="Models\Publication.cs" />
+    <Compile Include="Models\PublicationChannel.cs" />
+    <Compile Include="Models\Publisher.cs" />
+    <Compile Include="Models\RegExpression.cs" />
+    <Compile Include="Models\ReportItem.cs" />
+    <Compile Include="Models\ServiceState.cs" />
+    <Compile Include="Models\StatSeries.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserGroup.cs" />
+    <Compile Include="ProcessLog.aspx.cs">
+      <DependentUpon>ProcessLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProcessLog.aspx.designer.cs">
+      <DependentUpon>ProcessLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ConfigHome.aspx.cs">
+      <DependentUpon>ConfigHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigHome.aspx.designer.cs">
+      <DependentUpon>ConfigHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublicationDocumentation.aspx.cs">
+      <DependentUpon>PublicationDocumentation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PublicationDocumentation.aspx.designer.cs">
+      <DependentUpon>PublicationDocumentation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Release.aspx.cs">
+      <DependentUpon>Release.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Release.aspx.designer.cs">
+      <DependentUpon>Release.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports.aspx.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports.aspx.designer.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResendToChannel.aspx.cs">
+      <DependentUpon>ResendToChannel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResendToChannel.aspx.designer.cs">
+      <DependentUpon>ResendToChannel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Statistics.aspx.cs">
+      <DependentUpon>Statistics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Statistics.aspx.designer.cs">
+      <DependentUpon>Statistics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Testregex.aspx.cs">
+      <DependentUpon>Testregex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Testregex.aspx.designer.cs">
+      <DependentUpon>Testregex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement.aspx.cs">
+      <DependentUpon>UserManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManagement.aspx.designer.cs">
+      <DependentUpon>UserManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
+    <Compile Include="EditAddPublication.aspx.cs">
+      <DependentUpon>EditAddPublication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditAddPublication.aspx.designer.cs">
+      <DependentUpon>EditAddPublication.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPages.aspx.cs">
+      <DependentUpon>ViewPages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewPages.aspx.designer.cs">
+      <DependentUpon>ViewPages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewQueues.aspx.cs">
+      <DependentUpon>ViewQueues.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewQueues.aspx.designer.cs">
+      <DependentUpon>ViewQueues.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Testregex.aspx" />
+    <Content Include="UserManagement.aspx" />
+    <Content Include="ViewPages.aspx" />
+    <Content Include="ViewQueues.aspx" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Import Project="$(VSToolsPath)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(VSToolsPath)\TypeScript\Microsoft.TypeScript.targets')" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49573</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49573/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <UserProperties UseJQuerySupport="True" UseAjaxifiedTemplates="True" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,244 @@
+﻿/*normalize*/
+html,
+body,
+form {
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: normal 15px "Segoe UI", Arial, sans-serif;
+    color: #555555;
+}
+
+@media only screen and (min-width: 481px) and (max-width: 720px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        font-size: 20px;
+    }
+}
+
+a {
+    background: transparent;
+}
+
+img {
+    border: 0;
+}
+
+button,
+input {
+  /* -webkit-appearance: none; */
+    cursor: pointer;
+}
+
+hr {
+    border-width: 1px 0 0 0;
+    border-color: #767676;
+    border-style: solid;
+}
+
+/*typography*/
+h1, h2, h3, h4, h5, h6 {
+    line-height: normal;
+}
+
+h1, h2, h3 {
+    font-weight: normal;
+    margin: .5em 0;
+}
+
+h4, h5, h6 {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2.25em;
+}
+
+h2 {
+    font-size: 1.875em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.125em
+}
+
+h5 {
+    font-size: 1em;
+}
+
+h6 {
+    font-size: .875em;
+}
+
+/*template*/
+#wrapper .t-container-fluid {
+    max-width: 100%;
+}
+
+#wrapper .RadButton {
+    font-size: 1em;
+}
+
+#wrapper .RadMenu,
+div.RadMenuPopup,
+#wrapper .RadMenu_Default, #wrapper .RadMenu_Default a.rmLink {
+    font-size: 1em;
+ 
+}
+
+
+#wrapper .header {
+    background-color: #2a2d33;    
+    margin: 5px 5px 5px 10px;
+}
+
+#wrapper .header .RadMenu {
+    margin: 10px 0 0 0px;
+    float: left;
+}
+
+#wrapper .logo {
+    margin: 15px 10px 10px 10px;
+    float: right;
+   
+}
+
+#wrapper .logo img {
+    max-width: 100%;
+}
+
+
+
+.gridMainTable {
+    width: 800px;
+    border-spacing: 0;
+}
+
+.outer-div {
+    padding: 70px 0;
+}
+
+.center-div-list {
+    margin: auto;
+    padding: 5px;
+}
+
+
+.center-div {
+    margin: auto;
+}
+
+.header-text {
+    font-size: larger;
+}
+
+div.RadWindow {
+    z-index: 7010 !important;
+}
+
+#wrapper .footer {
+    padding:  10px 15px;
+    line-height: 30px;
+}
+
+#wrapper .RadGrid {
+    border-radius: 10px;
+    margin:  10px 10px 10px 10px;
+}
+
+#wrapper .rgRow > td {
+    padding: 1px 5px;
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+    border-color: #dedede;
+    margin-left: 1px;
+}
+
+#wrapper .rgAltRow > td {
+    padding: 1px 5px;
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+    border-color: #dedede;
+    margin-left: 1px;
+}
+
+#wrapper .rgRowRightAligned {
+    padding-right: 10px;
+}
+
+
+#wrapper .rgHeader {
+    padding: 4px 5px 4px 4px;
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+    margin-left: 1px;
+    font-weight: bold;
+}
+
+#wrapper .rgGroupHeader td {
+    background-color: honeydew;
+}
+
+#wrapper .rgGroupItem {
+    background-color: honeydew;
+}
+
+/*
+.rgEditForm {
+    width: auto !important;
+}
+
+    * + html .rgEditForm.popUpEditForm {
+        width: 800px !important;
+    }
+
+    .rgEditForm > div + div,
+    .RadGrid .rgEditForm {
+        height: auto !important;
+    }
+
+    .rgEditForm > div > table {
+        height: 100%;
+    }
+
+        .rgEditForm > div > table > tbody > tr > td {
+            padding: 4px 10px;
+        }
+*/
+.rfdSelectBoxDropDown {
+    z-index: 100011;
+}
+
+#wrapper .jumbotron {
+    margin-bottom: 10px;
+    padding: 0.2em 1.0em 0.2em 1.0em;
+    border: 1px solid transparent;
+    background-color: #e9eaea;
+    overflow: hidden;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+    #wrapper .jumbotron img {
+        margin: 0 0 0 0;
+    }
+
+    #wrapper .jumbotron h3 {
+        border-bottom: 1px solid #767676;
+        display: inline-block;
+    }
+
